@@ -7,6 +7,12 @@ select a Python kernel, and run all cells. Set `n_hard`, `n_soft`, `radius`, and
 with pT 1e-8. The option defaults to false and does not change the generated
 hard and soft particles.
 
+The reconstruction data models, event generators, and sequential-recombination
+algorithms are implemented in [jet_reconstruction.py](jet_reconstruction.py).
+Plotting, widgets, and animation export are kept in
+[jet_clustering.py](jet_clustering.py), which re-exports the reconstruction
+symbols for compatibility with existing notebook code.
+
 Set `y_scale` to `"log"` (the default) or `"linear"` in the parameters cell
 to choose the pT axis scale for the final comparison plot. The step-by-step
 widget, GIF and MP4 retain their linear pT axes.
@@ -57,7 +63,9 @@ simplified, non-periodic one-dimensional angular coordinate and scalar-pT
 recombination. It is not a replacement for a physical rapidity–azimuth
 clustering implementation such as FastJet.
 
-The notebook also contains an independent 2D grid example. Change `grid_size`,
+The notebook also contains an independent 2D grid example. Its first row shows
+the input cells before reconstruction; the remaining rows compare the three
+algorithms. Change `grid_size`,
 `grid_n_hard`, `grid_n_soft`, `grid_radius`, or `grid_seed` in its code cell.
 The number of particles must fit in the grid, with at most one particle per
 cell. Each algorithm has a top-down jet-colored cell map and a 3D view whose
